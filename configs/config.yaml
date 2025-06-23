@@ -1,0 +1,43 @@
+defaults:
+  - _self_
+  - ml: default
+  - override hydra/sweeper: optuna
+  - override hydra/sweeper/sampler: tpe
+
+hydra:
+  sweeper:
+    sampler:
+      seed: 42
+    direction: minimize
+    study_name: ContrastiveStudy${now:%Y%m%d_%H%M%S}
+    # storage: null #falsi no einish wott optuna plots bruche, bruchi e anderi storage solution #journal:///cluster/home/jamoser/Notebooks/FMAClassifier/optuna_journal_storage.log #storage: null #sqlite:////cluster/home/jamoser/Notebooks/FMAClassifier/OptunaLog.db
+    n_trials: 30
+    n_jobs: 1
+    params:
+      window_size: choice('15m','30m','60m')
+      threshold_ratio: choice(0.1, 0.25)
+      ml.batch_size: choice(32, 64, 128)
+      ml.dropout: choice(0.1, 0.3, 0.5)
+      ml.learning_rate: choice(1e-4, 1e-3)
+      ml.weight_decay: choice(1e-6, 1e-4)
+      ml.hidden_dim: choice(16, 32, 64) #, 128)
+      ml.projection_dim: choice(16, 32, 64)
+      ml.num_layers: choice(2, 3, 4)
+      # ml.augment_prob: choice(0.5, 0.75)
+      ml.noise_level: choice(0.05, 0.1, 0.2)
+      ml.mask_ratio: choice(0.15, 0.3)
+      ml.temperature: choice(0.05, 0.07, 0.1, 0.5)
+      ml.n_shuffleSegments: choice(3, 5)
+      # ml.mc_samples: choice(10, 20, 30)
+
+timeseries_path: '/cluster/work/vogtlab/Projects/IMUStrokeRecovery/timeseries/' 
+fma_clinical_path: '/cluster/work/vogtlab/Group/jamoser/classifier_data/fma_clinical.csv'
+base_path: '/cluster/work/vogtlab/Group/jamoser/classifier_data/'
+hdf_path: '/cluster/work/vogtlab/Group/jamoser/classifier_data/timeseries_new.h5' 
+checkpoint_path: '/cluster/work/vogtlab/Group/jamoser/checkpoints/w15m_th0.25/hyperparam_search/h032_p064_l02/lr1.0e-03_b032/wd1.0e-04_dr0.10_t0.10/noise0.05_mask0.30/20241204_040509/best_checkpoint.ckpt'
+sensor_setups: ['all', 'affected', 'nonaffected', 'no_chest', 'wrists']
+window_size: '15m'
+threshold_col: 'functional'
+threshold_ratio: 0.25
+all_days: ['day3', 'day9', 'day28', 'day90', 'day365']
+seed: 42
