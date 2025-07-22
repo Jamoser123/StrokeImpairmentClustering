@@ -134,8 +134,8 @@ This work addresses a critical gap in stroke rehabilitation by:
 Contact:
 jamoser@ethz.ch
 
-Acknowledgments:
-Supervisor: Prof. Dr. Julia E. Vogt
+Acknowledgments:  
+Supervisor: Prof. Dr. Julia E. Vogt  
 Advisors: A. Ryser, J. Pohl, C. A. Easthope  
 ETH Zurich: Department of Computer Science  
 Clinical Partners and data providers: Lake Lucerne Institute (LLUI)  
