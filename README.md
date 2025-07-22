@@ -11,6 +11,7 @@ This repository contains the code parts of the implementation of my bachelor the
 - **Supervisor:** Prof. Dr. Julia E. Vogt
 - **Advisors:** A. Ryser, J. Pohl, C. A. Easthope
 - **Date:** January 19, 2025
+- **Grade:** 6.0 (A)
 
 ## Abstract
 Current clinical assessments of upper limb function fail to capture the complexities of daily life, often not accurately reflecting upper limb performance in everyday activities. This work aims to derive a simplified categorization of real-life upper limb performance in stroke patients based on wrist sensor data.
