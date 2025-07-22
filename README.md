@@ -136,9 +136,9 @@ jamoser@ethz.ch
 
 Acknowledgments:
 Supervisor: Prof. Dr. Julia E. Vogt
-Advisors: A. Ryser, J. Pohl, C. A. Easthope
-ETH Zurich: Department of Computer Science
-Clinical Partners and data providers: Lake Lucerne Institute (LLUI)
+Advisors: A. Ryser, J. Pohl, C. A. Easthope  
+ETH Zurich: Department of Computer Science  
+Clinical Partners and data providers: Lake Lucerne Institute (LLUI)  
 
 For detailed methodology, clinical validation, and comprehensive results, please refer to the full thesis document.
 
